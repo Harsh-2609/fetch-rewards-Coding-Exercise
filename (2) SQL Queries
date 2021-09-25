@@ -1,0 +1,15 @@
+I tried to compelte two SQL Queries using MySql as a database. I tried doing the  no.3 and 4 queries present in the exercise.  
+
+(3)
+Select 
+Case when (Select Avg(totalSpent) from receipts where rewardsReceiptStatus='Accepted') > (Select Avg(totalSpent) from receipts where rewardsReceiptStatus='Rejected') then 'Accepted has higher average spent'
+Else 'Rejected has higher average spent'
+End
+From receipts
+
+(4)
+Select 
+Case when (Select Sum(purchasedItemCount) from receipts where rewardsReceiptStatus='Accepted') > (Select Sum(purchasedItemCount) from receipts where rewardsReceiptStatus='Rejected') then 'Accepted has higher count'
+Else 'Rejected has higher count'
+End
+From receipts
